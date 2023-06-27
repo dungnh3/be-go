@@ -1,0 +1,18 @@
+version: v1
+name: be-go
+deps:
+  - buf.build/googleapis/googleapis
+  - buf.build/grpc-ecosystem/grpc-gateway
+  - buf.build/envoyproxy/protoc-gen-validate
+build:
+  excludes:
+    - vendor
+lint:
+  use:
+    - DEFAULT
+  except:
+    - PACKAGE_VERSION_SUFFIX
+    - BASIC
+breaking:
+  use:
+    - FILE
